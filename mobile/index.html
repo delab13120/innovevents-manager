@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innov'Events Mobile - Terrain</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f5; margin: 0; padding: 0; display: flex; justify-content: center; }
+        .phone-frame { width: 100%; max-width: 420px; background: #fff; min-height: 100vh; box-shadow: 0 0 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+        header { background: #1a252f; color: #fff; padding: 18px; text-align: center; font-weight: bold; font-size: 1.2rem; }
+        .content { padding: 15px; flex: 1; }
+        .card { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+        .badge { background: #198754; color: #fff; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; }
+        h2 { font-size: 1.1rem; margin: 8px 0; color: #1a252f; }
+        p { font-size: 0.9rem; color: #495057; margin: 5px 0; }
+        .actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+        .btn { flex: 1; text-align: center; padding: 10px 8px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: bold; color: #fff; border: none; cursor: pointer; }
+        .btn-call { background: #0d6efd; }
+        .btn-mail { background: #6f42c1; }
+        .btn-gps { background: #198754; }
+        .note-box { margin-top: 15px; border-top: 1px solid #ddd; padding-top: 10px; }
+        input { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 8px; }
+        .btn-note { background: #1a252f; width: 100%; }
+        .note-item { background: #fff3cd; padding: 8px; border-radius: 6px; font-size: 0.85rem; margin-top: 6px; border-left: 3px solid #ffc107; }
+    </style>
+</head>
+<body>
+<div class="phone-frame">
+    <header>Innov'Events Mobile (Chloé & José)</header>
+    <div class="content">
+        <div class="card">
+            <span class="badge">Accepté • À venir</span>
+            <h2>Séminaire Innovation 2026</h2>
+            <p><strong>Client :</strong> Sophie Durand</p>
+            <p><strong>Date :</strong> 15/06/2026 à 09:00</p>
+            <p><strong>Lieu :</strong> Palais des Congrès, Paris</p>
+            
+            <div class="actions">
+                <a href="tel:+33601020304" class="btn btn-call">Appeler</a>
+                <a href="mailto:client@entreprise.fr" class="btn btn-mail">Email</a>
+                <a href="https://google.com" target="_blank" class="btn btn-gps">Itinéraire GPS</a>
+            </div>
+
+            <div class="note-box">
+                <input type="text" id="noteInput" placeholder="Ajouter une note à chaud sur place...">
+                <button class="btn btn-note" onclick="ajouterNote()">+ Enregistrer la note</button>
+                <div id="listeNotes">
+                    <div class="note-item"><strong>Chloé :</strong> Vérifier le branchement des micros avant 8h30.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function ajouterNote() {
+        const input = document.getElementById('noteInput');
+        if (input.value.trim() === '') return;
+        const div = document.createElement('div');
+        div.className = 'note-item';
+        div.innerHTML = '<strong>José (Mobile) :</strong> ' + input.value;
+        document.getElementById('listeNotes').prepend(div);
+        input.value = '';
+    }
+</script>
+</body>
+</html>

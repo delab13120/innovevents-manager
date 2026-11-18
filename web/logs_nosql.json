@@ -1,0 +1,5 @@
+{"horodatage":"2026-11-18T16:10:36+00:00","type_action":"connexion_reussie","id_utilisateur":1,"details":{"ip":"172.18.0.1","role":"admin"}}
+{"horodatage":"2026-11-18T16:12:20+00:00","type_action":"connexion_reussie","id_utilisateur":3,"details":{"ip":"172.18.0.1","role":"client"}}
+{"horodatage":"2026-11-18T16:20:22+00:00","type_action":"connexion_reussie","id_utilisateur":1,"details":{"ip":"172.18.0.1","role":"admin"}}
+{"horodatage":"2026-11-18T16:21:37+00:00","type_action":"connexion_reussie","id_utilisateur":1,"details":{"ip":"172.18.0.1","role":"admin"}}
+{"horodatage":"2026-11-18T16:24:40+00:00","type_action":"connexion_reussie","id_utilisateur":3,"details":{"ip":"172.18.0.1","role":"client"}}

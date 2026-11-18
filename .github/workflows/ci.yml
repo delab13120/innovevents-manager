@@ -1,0 +1,25 @@
+name: CI - Tests et Build InnovEvents
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code source
+        uses: actions/checkout@v4
+
+      - name: Installation de PHP 8.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Exécution des tests unitaires
+        run: php tests/DevisTest.php
+
+      - name: Validation de la configuration Docker Compose
+        run: docker compose config
